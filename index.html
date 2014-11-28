@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+h5 {
+	margin: 10px;
+	display: inline-block;
+}
+button {
+	display: inline-block;
+}
+</style>
+</head>
 <body>
 <h1>Hello</h1>
 <p>I'm hosted with GitHub Pages!</p>
-<p id="p"></p>
+<h1>The World</h1>
+
 <script>
-document.getElementById("p").innerHTML = 5 + 6;
+var continents = ["Rokkos", "Galard", "Eisstras", "Candella", "Ytteros"];
+var biomes = ["Mountains", "Plains", "Swamp", "Forest", "Jungle"];
+var regions = ["North", "South", "West", "East"];
+
+for (var i = 0; i < continents.length; i++) {
+	var continent = document.createElement("H2");
+	var continentText = document.createTextNode(continents[i]);
+	continent.appendChild(continentText);
+	document.body.appendChild(continent);
+
+	var lineBreak = document.createElement("BR");
+	continent.appendChild(lineBreak);
+
+	for (var j = 0; j < 8; j++) {
+		var selectedBiome = biomes[Math.floor(biomes.length * Math.random())];
+		var selectedRegion = regions[Math.floor(regions.length * Math.random())];
+		var region = document.createElement("H5");
+		var regionText = document.createTextNode(selectedBiome + " - " + selectedRegion);
+		region.appendChild(regionText);
+		continent.appendChild(region);
+
+		var populateButton = document.createElement("BUTTON");
+		var populateButtonText = document.createTextNode("Populate");
+		var populateButtonOnClick = document.createAttribute("onclick");
+		populateButtonOnClick.value = "populate()";
+		populateButton.setAttributeNode(populateButtonOnClick);
+		populateButton.appendChild(populateButtonText);
+		continent.appendChild(populateButton);
+
+		var lineBreak = document.createElement("BR");
+		continent.appendChild(lineBreak);
+	};
+};
+
+function populate() {
+	var test = document.createElement("H2");
+	var testText = document.createTextNode("YARP");
+	test.appendChild(testText);
+	document.body.appendChild(test);
+}
+
 </script>
 </body>
 </html>
