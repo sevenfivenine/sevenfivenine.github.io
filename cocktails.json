@@ -2,7 +2,14 @@
   "drinks": [
     {
       "idDrink": "17180",
-      "strDrink": "Aviation"
+      "strDrink": "Aviation",
+      "strDrinkAlternate": null,
+      "strTags": "IBA,Classic",
+      "strVideo": "https://www.youtube.com/watch?v=oOHH0GGglyM",
+      "strCategory": "Cocktail",
+      "strIBA": "Unforgettables",
+      "strAlcoholic": "Alcoholic",
+      "strGlass": "Cocktail glass"
     }
   ]
 }
